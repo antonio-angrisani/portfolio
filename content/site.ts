@@ -8,75 +8,134 @@ export const metrics = [
 export const caseStudies = [
   {
     slug: "monzo-flex",
-    title: "Building Monzo Flex",
-    eyebrow: "0 to 1.5M+ customers",
+    number: "01",
+    title: "Reinventing Consumer Credit",
+    label: "Monzo Flex",
+    eyebrow: "0-to-1 product and business building",
     summary:
-      "Taking a consumer credit product from early conviction to a mainstream financial product used by millions.",
-    impact: ["0→1 product creation", "1.5M+ customers", "Regulated consumer credit"],
+      "Building a new way for millions of customers to manage borrowing, while creating one of Monzo’s largest new businesses.",
+    result: "1.5M+ customers",
+    capabilities: ["0–1 Product", "Product Strategy", "Consumer Credit", "Scaling"],
+    role: "Product lead for Monzo Flex from early development through launch and scale.",
+    timeframe: "2020–2023",
+    scope: "Customer insight, proposition design, credit and risk, commercial model, launch and early scale.",
+    metrics: ["1.5M+ customers", "£120M+ annualised revenue", "Major Monzo product line"],
     sections: {
-      context:
-        "Monzo had earned deep daily banking engagement and customer trust, creating an opportunity to make credit feel clearer, more useful, and more responsible.",
-      problem:
-        "Customers needed flexible borrowing that felt understandable and in-control, not hidden behind confusing statements, fees, or legacy credit card habits.",
+      challenge:
+        "Consumer credit is often useful but poorly understood. The challenge was to build a borrowing product that felt clearer, more controllable and more aligned with how customers already used Monzo.",
       insight:
-        "The winning product would not be a credit card clone. It needed to behave like a Monzo product: transparent, immediate, mobile-native, and grounded in responsible affordability.",
+        "The opportunity was not to copy a legacy credit card. It was to design credit around clarity, control and responsible affordability from the start.",
       approach:
-        "Shape the proposition around clarity and control, align risk and product strategy early, and build a product experience that made repayment choices explicit.",
-      execution:
-        "The work required tight collaboration across product, engineering, design, data, credit risk, compliance, operations, marketing, and customer support.",
-      impact:
-        "Flex scaled from zero to more than 1.5 million customers and became one of Monzo's defining consumer finance products.",
-      lessons:
-        "In regulated fintech, product quality comes from making the commercial model, customer experience, and risk framework reinforce each other.",
-      differently:
-        "Invest even earlier in portfolio-level customer segmentation, lifecycle messaging, and deeper education around responsible credit behavior.",
+        "Shape the proposition around explicit repayment choices, align product and risk strategy early, and build a commercial model that could scale without hiding complexity from customers.",
+      myRole:
+        "I led the product work from 0→1, working with engineering, design, data, credit risk, operations, marketing and compliance to move from insight to launch and then into early scale.",
+      decisions: [
+        "Designed the product around control and transparency rather than revolving-credit conventions.",
+        "Treated risk, affordability and customer experience as one product system.",
+        "Prioritised product-market fit before broadening the proposition.",
+        "Built launch and scaling decisions around both customer outcomes and commercial durability.",
+      ],
+      outcomes: [
+        "Scaled to more than 1.5 million customers.",
+        "Grew into a £120M+ annualised revenue business.",
+        "Established consumer credit as a major Monzo product line.",
+      ],
+      learned: [
+        "Regulated products work best when risk and product strategy are designed together.",
+        "Customer trust compounds when the product makes trade-offs visible.",
+        "A simple proposition still needs a robust commercial and operational system behind it.",
+      ],
     },
   },
   {
-    slug: "flex-build",
-    title: "Flex Build",
-    eyebrow: "Credit-building expansion",
+    slug: "flex-portfolio",
+    number: "02",
+    title: "Scaling from One Product to a Platform",
+    label: "The Flex portfolio",
+    status: "Coming soon",
+    eyebrow: "Portfolio strategy and business scaling",
     summary:
-      "Expanding from a single credit product into a broader portfolio designed around customer progress and financial confidence.",
-    impact: ["Product portfolio expansion", "Responsible growth", "Credit-building proposition"],
+      "Expanding a successful product into a broader portfolio of credit propositions designed around different customer needs.",
+    result: "3 product lines",
+    capabilities: ["Portfolio Strategy", "Segmentation", "Growth", "Responsible Credit"],
+    role: "Product leader for the Flex domain and broader consumer credit portfolio.",
+    timeframe: "2023–Present",
+    scope: "Portfolio strategy, product segmentation, proposition development, growth, prioritisation and organisational design.",
+    metrics: ["3 product lines", "1.5M+ customers", "~50-person product and technology organisation"],
     sections: {
-      context:
-        "As Flex scaled, the opportunity shifted from one product to a broader credit ecosystem that could serve more customer needs over time.",
-      problem:
-        "Not every customer is ready for the same credit product. Some need a route to build confidence, demonstrate good behavior, and access better options later.",
+      challenge:
+        "As Flex scaled, the strategic challenge shifted from growing one successful product to building a portfolio that could serve different customer needs without diluting the core proposition.",
       insight:
-        "Responsible credit growth depends on progression. A strong portfolio gives customers a path, not just a yes-or-no decision.",
+        "A durable credit business needs progression. Different customers need different propositions, from everyday flexibility to credit-building and promotional borrowing moments.",
       approach:
-        "Frame Flex Build as an expansion of customer outcomes: help customers improve their credit position while preserving clarity and control.",
-      execution:
-        "Balance proposition design with risk appetite, eligibility, education, operational readiness, and the customer journey from discovery to repayment.",
-      impact:
-        "Created a strategic path from a flagship credit product toward a more complete responsible credit portfolio.",
-      lessons:
-        "The most durable fintech products often compound through trust, not just acquisition.",
-      differently:
-        "Bring customer education and behavioral feedback loops even closer to the core product experience from day one.",
+        "Expand from a flagship product into a broader platform, including propositions such as Flex Build and always-on 0% offers where they create clear customer and commercial value.",
+      myRole:
+        "I led the domain across product, engineering, design, data, credit risk, operations and marketing, setting direction across growth, monetisation, retention and portfolio expansion.",
+      decisions: [
+        "Balanced new propositions against focus on the core Flex product.",
+        "Used customer need and risk appetite to shape segmentation and eligibility.",
+        "Managed cannibalisation and prioritisation across a growing portfolio.",
+        "Connected portfolio strategy to the operating model and team structure.",
+      ],
+      outcomes: [
+        "Expanded Flex from one product into a broader consumer credit portfolio.",
+        "Created clearer routes for different customer needs and borrowing moments.",
+        "Built the strategic foundation for responsible growth across multiple credit propositions.",
+      ],
+      learned: [
+        "A portfolio is not a collection of features; it needs a clear customer architecture.",
+        "Growth and cannibalisation have to be discussed together.",
+        "Responsible credit strategy is strongest when customer value, risk and revenue are balanced explicitly.",
+      ],
+    },
+  },
+  {
+    slug: "product-teams",
+    number: "03",
+    title: "Building High-Performing Product Teams",
+    label: "Product leadership",
+    eyebrow: "Organisation and operating model",
+    summary:
+      "Creating the teams, decision-making systems and operating model needed to build and scale products used by millions.",
+    result: "~50-person organisation",
+    capabilities: ["Org Design", "Product Strategy", "Decision-Making", "Leadership"],
+    role: "Director / Principal Product Manager leading a multidisciplinary product and technology organisation.",
+    timeframe: "2025–Present",
+    scope: "Team structure, operating cadence, product strategy, cross-functional leadership and product-leader development.",
+    metrics: ["~50-person organisation", "Product, tech, data, risk, ops and marketing", "Millions of customers"],
+    sections: {
+      challenge:
+        "Scaling a regulated consumer credit portfolio required more than good product ideas. The organisation needed clearer decision-making, stronger ownership and an operating rhythm that could handle ambiguity.",
+      insight:
+        "Teams move faster when strategy is concrete enough to guide trade-offs, and when product, engineering, design, data, risk, operations and marketing have shared context.",
+      approach:
+        "Build an operating model around clear accountability, regular strategic review, disciplined prioritisation and strong cross-functional leadership.",
+      myRole:
+        "I led the product organisation and worked with functional leaders to create the structure, cadence and decision-making systems needed to scale the portfolio responsibly.",
+      decisions: [
+        "Clarified ownership across product lines and shared platform capabilities.",
+        "Created a cadence for strategy, prioritisation and commercial review.",
+        "Brought product, risk, operations and marketing closer into core product decisions.",
+        "Invested in developing product leaders and creating clearer accountability.",
+      ],
+      outcomes: [
+        "Led an approximately 50-person product and technology organisation.",
+        "Created stronger alignment across product, engineering, design, data, credit risk, operations and marketing.",
+        "Improved the operating model needed to scale products used by millions.",
+      ],
+      learned: [
+        "Org design is a product decision when the product is already at scale.",
+        "Decision quality improves when ambiguity is made explicit.",
+        "Senior product leadership is often about creating the conditions for other leaders to do their best work.",
+      ],
     },
   },
 ];
 
-export const featuredWork = [
-  {
-    title: "Scaling responsible credit",
-    description:
-      "Growing Flex into a £120M+ annualised revenue business while keeping the product anchored in transparency, control, and responsible lending.",
-  },
-  {
-    title: "Leading product organisations",
-    description:
-      "Building and leading a 50-person cross-functional organisation across product, engineering, design, data, risk, operations, marketing, and compliance.",
-  },
-  {
-    title: "From product to portfolio",
-    description:
-      "Expanding from one breakthrough product into a broader consumer credit portfolio with stronger retention, monetisation, and customer outcomes.",
-  },
-];
+export const featuredWork = caseStudies.map((study) => ({
+  title: study.title,
+  description: study.summary,
+}));
 
 export const insights = [
   "Consumer fintech",
