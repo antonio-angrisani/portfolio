@@ -2,4 +2,8 @@
 
 Personal portfolio website for Antonio Angrisani, focused on fintech product leadership, Monzo Flex, consumer credit, and product experience.
 
-Built with Next.js, TypeScript, and Tailwind CSS.
+The current editable draft includes:
+
+- A static preview in `outputs/portfolio-draft`
+- A Next.js/TypeScript/Tailwind version in the app root
+

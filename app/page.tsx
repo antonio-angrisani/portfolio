@@ -1,22 +1,17 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
-import { InsightCard } from "@/components/insight-card";
-import { MetricCard } from "@/components/metric-card";
 import {
   experience,
   featuredWork,
-  insights,
   linkedInUrl,
-  metrics,
-  speakingTopics,
 } from "@/content/site";
 
 export default function Home() {
   return (
     <main>
       <section className="overflow-hidden border-b border-line">
-        <Container className="grid min-h-[calc(100vh-4rem)] gap-12 py-16 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <Container className="grid min-h-[calc(88vh-4rem)] gap-12 py-16 sm:py-24 lg:items-center">
           <div className="animate-rise">
             <p className="mb-6 text-xs font-bold uppercase tracking-[0.18em] text-moss">
               Fintech product leadership
@@ -30,7 +25,7 @@ export default function Home() {
               including Monzo Flex from zero to over 1.5 million customers.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/#work" className="rounded-full bg-ink px-6 py-3 text-sm font-bold text-paper transition hover:bg-moss">
+              <Link href="/work" className="rounded-full bg-ink px-6 py-3 text-sm font-bold text-paper transition hover:bg-moss">
                 Explore the work
               </Link>
               <Link href="/#experience" className="rounded-full border border-line px-6 py-3 text-sm font-bold transition hover:border-ink">
@@ -39,17 +34,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-line bg-paper p-5 shadow-soft">
-            <div className="flex items-center justify-between text-xs font-bold uppercase tracking-[0.18em] text-graphite">
-              <span>Impact snapshot</span>
-              <span>Monzo</span>
-            </div>
-            <div className="mt-12 grid grid-cols-2 gap-3">
-              {metrics.map((metric) => (
-                <MetricCard key={metric.label} {...metric} />
-              ))}
-            </div>
-          </div>
         </Container>
       </section>
 
@@ -134,11 +118,14 @@ export default function Home() {
           <div className="mb-10 grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-moss">
-                LinkedIn-informed experience
+                Experience
               </p>
               <h2 className="mt-4 font-serif text-4xl leading-none sm:text-6xl">
-                Source the facts from LinkedIn. Curate the story for impact.
+                A decade building and scaling consumer finance products.
               </h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-graphite">
+                I’ve worked across the full arc of consumer fintech: taking products from 0→1, scaling them to millions of customers, and leading the strategy, teams, and operating model needed to grow them responsibly.
+              </p>
             </div>
             <a
               href={linkedInUrl}
@@ -147,14 +134,37 @@ export default function Home() {
               Connect on LinkedIn
             </a>
           </div>
-          <div className="grid gap-4">
-            {experience.map((item) => (
-              <article key={item.role} className="rounded-lg border border-line bg-paper p-6">
-                <p className="text-sm font-semibold text-moss">
-                  {item.company} · {item.timeframe}
-                </p>
-                <h3 className="mt-3 font-serif text-3xl leading-none">{item.role}</h3>
-                <p className="mt-4 text-base leading-7 text-graphite">{item.description}</p>
+          <div className="grid gap-5">
+            {experience.map((company) => (
+              <article key={company.company} className="rounded-lg border border-line bg-paper p-6">
+                <div className="grid gap-5 sm:grid-cols-[72px_1fr] sm:items-center">
+                  <div className={company.logo === "monzo" ? "grid h-[72px] w-[72px] place-items-center overflow-hidden rounded-lg bg-[#14233c]" : "grid h-[72px] w-[72px] place-items-center overflow-hidden rounded-lg bg-white shadow-[inset_0_0_0_1px_rgba(0,174,239,0.12)]"}>
+                    {company.logo === "monzo" ? (
+                      <img src="/monzo-logo.png" alt="Monzo Bank logo" className="h-[72px] w-[72px] object-cover" />
+                    ) : (
+                      <img src="/barclays-logo.png" alt="Barclays logo" className="h-[72px] w-[72px] object-contain" />
+                    )}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-moss">
+                      {company.company} · {company.timeframe}
+                    </p>
+                    <h3 className="mt-2 font-serif text-3xl leading-none">
+                      {company.summary}
+                    </h3>
+                  </div>
+                </div>
+                <div className="mt-8 grid gap-0 border-l-2 border-line pl-8">
+                  {company.roles.map((role) => (
+                    <div key={role.title} className="relative pb-7 pl-6 last:pb-0 before:absolute before:left-[-39px] before:top-2 before:h-3 before:w-3 before:rounded-full before:bg-copper before:ring-[6px] before:ring-paper">
+                      <h4 className="text-lg font-bold">{role.title}</h4>
+                      <p className="mt-1 text-sm text-graphite/70">{role.timeframe}</p>
+                      <p className="mt-4 max-w-4xl text-base leading-7 text-graphite">
+                        {role.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
@@ -165,38 +175,52 @@ export default function Home() {
         <Container className="py-16 sm:py-24">
           <div className="mb-10">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-moss">
-              Writing and thinking
+              Writing
             </p>
             <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-none sm:text-6xl">
-              Essays to publish as the site grows.
+              Occasional notes on consumer fintech and product
             </h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {insights.slice(0, 3).map((topic) => (
-              <InsightCard key={topic} title={topic} />
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section id="speaking" className="border-b border-line">
-        <Container className="py-16 sm:py-24">
-          <div className="mb-10">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-moss">
-              Speaking and advisory
-            </p>
-            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-none sm:text-6xl">
-              Practical lessons from building regulated fintech products at scale.
-            </h2>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {speakingTopics.map((topic) => (
-              <span
-                key={topic}
-                className="rounded-full border border-line bg-paper px-4 py-2 text-sm font-semibold text-graphite"
+          <div>
+            {[
+              {
+                number: "01",
+                title: "How insights shaped building a 0→1 product: Monzo Flex",
+                summary: "A look at how customer insight shaped the early development of Monzo Flex.",
+                meta: "Product Strategy · 2022",
+                url: "https://monzo.com/blog/2022/11/16/how-insights-shaped-building-a-0-1-product-monzo-flex",
+              },
+              {
+                number: "02",
+                title: "What 0→1 fintech products need before they scale",
+                summary: "Lessons from turning early customer insight into a regulated product category.",
+                meta: "Product strategy · Coming soon",
+                url: "#",
+              },
+            ].map((item) => (
+              <Link
+                key={item.number}
+                href={item.url}
+                className="group grid gap-3 py-7 text-inherit no-underline transition-colors sm:grid-cols-[48px_1fr_auto] sm:gap-6"
+                aria-label={`Read ${item.title}`}
+                target={item.url === "#" ? undefined : "_blank"}
+                rel={item.url === "#" ? undefined : "noreferrer"}
               >
-                {topic}
-              </span>
+                <span className="text-xs font-extrabold tracking-[0.12em] text-moss/70">
+                  {item.number}
+                </span>
+                <span className="grid gap-2">
+                  <strong className="font-serif text-2xl leading-tight text-ink transition-colors group-hover:text-clay sm:text-4xl">
+                    {item.title}
+                  </strong>
+                  <span className="max-w-2xl text-base leading-relaxed text-moss">
+                    {item.summary}
+                  </span>
+                </span>
+                <span className="text-sm font-bold text-moss sm:whitespace-nowrap">
+                  {item.meta} →
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
